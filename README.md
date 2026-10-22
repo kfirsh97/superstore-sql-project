@@ -39,6 +39,7 @@ sql/02_discount_analysis.sql   the negative-profit investigation
 2. Copy the CSV into the container:
    ```bash
    docker cp data/superstore.csv sqlserver:/tmp/superstore.csv
+   docker exec -u root sqlserver chmod 644 /tmp/superstore.csv   # let SQL Server read the file
    ```
 3. Run `sql/01_load_superstore.sql`, then `sql/02_discount_analysis.sql` (VS Code + MSSQL extension).
 
